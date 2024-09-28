@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load static wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+<!-- replace everything below with: -->
+{% block content %}
+
+{% include 'elements/home_page/gallery.html' %}
+
+<div id="homepage-block-important" class="row">
+    <div class="col">
+        <div class="block box">
+            Самое важное
+        </div>
+    </div>
+</div>
+
+<div id="homepage-block-functions" class="row">
+    <div class="col">
+        <div class="block box">
+            Функциональные блоки
+        </div>
+    </div>
+</div>
+<div id="homepage-block-news" class="row">
+    <div class="col">
+        <div class="block box">
+            Новости
+        </div>
+    </div>
+</div>
+<div id="homepage-block-banners" class="row">
+    <div class="col">
+        <div class="block box">
+            Банеры
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

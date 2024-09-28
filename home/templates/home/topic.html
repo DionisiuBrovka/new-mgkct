@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load static wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+<!-- replace everything below with: -->
+{% block content %}
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div id="homepage-block-gallery" class="row">
+    <div class="col">
+        <div id="c-gallery" class="block">
+            <div id="my-keen-slider" class="keen-slider">
+                {% for item in page.gallery.all %}
+
+                <div class="slider-container">
+                    <div class="keen-slider__slide">
+                        {% image item.image fill-1200x600 %}
+                        <!-- <div class="slider-content box-hard">
+                            <h3>
+                                {{ item.title }}
+                            </h3>
+                            <p>{{ item.intro }}</p>
+                        </div> -->
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+            <script>
+                var slider = new KeenSlider("#my-keen-slider", {
+                    loop: true,
+                },
+                    [
+                        (slider) => {
+                            let timeout
+                            let mouseOver = false
+                            function clearNextTimeout() {
+                                clearTimeout(timeout)
+                            }
+                            function nextTimeout() {
+                                clearTimeout(timeout)
+                                if (mouseOver) return
+                                timeout = setTimeout(() => {
+                                    slider.next()
+                                }, 2000)
+                            }
+                            slider.on("created", () => {
+                                slider.container.addEventListener("mouseover", () => {
+                                    mouseOver = true
+                                    clearNextTimeout()
+                                })
+                                slider.container.addEventListener("mouseout", () => {
+                                    mouseOver = false
+                                    nextTimeout()
+                                })
+                                nextTimeout()
+                            })
+                            slider.on("dragStarted", clearNextTimeout)
+                            slider.on("animationEnded", nextTimeout)
+                            slider.on("updated", nextTimeout)
+                        },
+                    ]
+                )
+            </script>
+        </div>
+    </div>
+</div>

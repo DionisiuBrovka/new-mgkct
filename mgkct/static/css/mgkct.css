@@ -1,0 +1,295 @@
+*,
+::after,
+::before {
+    box-sizing: border-box
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    :root {
+        scroll-behavior: smooth
+    }
+}
+
+/* ================================================================================= */
+
+@font-face {
+    font-family: 'Maustica';
+    src: url('../fonts/MausticaSemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Coves';
+    src: url('../fonts/Roboto.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Hand';
+    src: url('../fonts/HansHand\ Cyr.ttf') format("truetype");
+}
+
+/* ================================================================================= */
+
+body {
+    margin: 0;
+    background: rgb(197, 229, 255);
+    background: linear-gradient(27deg, rgba(197, 229, 255, 1) 0%, rgba(233, 245, 255, 1) 31%, rgba(148, 207, 255, 1) 64%, rgba(197, 229, 255, 1) 100%);
+}
+
+.body-decoration {
+    position: fixed;
+    z-index: -1200;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 182px;
+    opacity: 0.42;
+    top: 0;
+    left: 0;
+    /* box-shadow: inset white 0 20vh 0 0; */
+    background-blend-mode: darken;
+}
+
+/* ================================================================================= */
+
+header {
+    min-height: 30vh;
+}
+
+#header-content {
+    min-height: 210px;
+    height: 30vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-back-img {
+    position: absolute;
+
+    width: 100%;
+    height: 70vh;
+    z-index: -1010;
+
+    object-fit: cover;
+}
+
+#header-back-img-fx {
+    position: absolute;
+
+    top: 0px;
+    left: 0px;
+
+    width: 100%;
+    height: 70vh;
+    z-index: -1000;
+
+    box-shadow: inset #e7f4ff 0px -20vh 15vh -2vh, #e4f3ff 0px 14vh 25vh 15vh;
+}
+
+#header-logo-img {
+    display: block;
+
+    width: 100%;
+    max-width: 26vh;
+
+    margin: auto;
+    margin-right: 0px;  
+}
+
+#header-title h1{
+    color: rgb(50, 105, 255);
+    font-size: 36pt;
+    font-family: 'Maustica';
+    text-shadow: 3px 3px 5px rgb(255, 255, 255);
+}
+
+#header-sub-title {
+    color: white;
+    font-size: 20pt;
+    font-family: 'Maustica';
+    text-shadow: 3px 3px 10px rgb(53, 58, 124);
+}
+
+#header-sup-title {
+    position: relative;
+
+    margin-top: -20pt;
+
+    right: -15rem;
+
+    rotate: -3deg;
+
+    color: #335b8fbb;
+    font-size: 22pt;
+    font-family: 'Hand';
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    #header-logo-img {
+        display: none;
+    }
+
+    h1#header-title {
+        font-size: 22pt;
+    }
+
+    #header-sub-title {
+        font-size: 18pt;
+    }
+}
+
+/* ================================================================================= */
+
+main {
+    min-height: 70vh;
+    z-index: 100;
+}
+
+/* ================================================================================= */
+
+footer {
+    padding: 1.25em;
+
+    min-height: 15vh;
+
+    background-color: rgb(0, 86, 167);
+    box-shadow: inset rgba(32, 19, 56, 0.4) 0px 17px 15px -15px;
+
+    color: rgb(118, 183, 209);
+    font-size: 10pt;
+}
+
+footer a {
+    color: rgb(190, 218, 253);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: dashed;
+}
+
+#footer-down {
+    margin: 0px;
+
+    color: rgb(85, 145, 168);
+    text-align: center;
+}
+
+/* ================================================================================= */
+
+#mobile-nav {
+    display: none;
+}
+
+#fullsize-nav {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(37, 47, 104);
+    font-family: 'Coves';
+    font-weight: 400;
+    font-size: 14pt;
+}
+
+.nav-item:hover a{
+    text-decoration: none;
+    text-shadow: 
+        rgb(255, 255, 255) -2px -2px 3px, 
+        rgb(122, 119, 139) 2px 2px 4px;
+    transition: 200ms;
+}
+
+#nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    border-radius: 24px;
+}
+
+#nav-list>div:nth-child(1) {
+    font-weight: 900;
+}
+
+#nav-list input[type=text] {
+    border: 1px solid rgba(130, 150, 168, 0.4);
+    border-radius: 8px;
+    box-shadow: inset rgba(37, 60, 105, 0.2) 1px 1px 3px 0px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px) saturate(130%);
+    padding: 0.25em;
+    padding-left: 1em;
+
+    width: 7vw;
+}
+
+#nav-list input[type=text]::placeholder {
+    color: rgb(173, 173, 173);
+}
+
+
+#nav-list input[type=button] {
+    border: 1px solid rgba(130, 150, 168, 0.4);
+    border-radius: 8px;
+    box-shadow: rgba(37, 60, 105, 0.2) 0px 0px 5px 0px;
+    background-color: rgba(255, 255, 255, 0.288);
+    backdrop-filter: blur(5px) saturate(130%);
+    padding: 0.25em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+#nav-list input[type=button]::placeholder {
+    color: rgb(173, 173, 173);
+}
+
+@media (max-width: 1200px) {
+    #mobile-nav {
+        display: block;
+    }
+
+    #fullsize-nav {
+        display: none;
+    }
+}
+
+/* ================================================================================= */
+
+.debug {
+    border: 2px solid blue;
+    background-color: rgb(202, 202, 202);
+    color: blue;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* ================================================================================= */
+.box {
+    border: 1px solid rgba(187, 209, 228, 0.6);
+    box-shadow: rgba(37, 60, 105, 0.3) 0px 0px 20px 0px, inset rgba(255, 255, 255, 0.3) 6px 6px 8px 1px;
+    background-color: rgba(246, 248, 248, 0.5);
+    backdrop-filter: blur(5px) saturate(130%);
+}
+
+.box-hard {
+    border: 1px solid rgba(187, 209, 228, 0.6);
+    box-shadow: rgba(37, 60, 105, 0.5) 0px 0px 20px 0px, inset rgba(255, 255, 255, 0.3) 6px 6px 8px 1px;
+    background-color: rgba(246, 248, 248, 0.6);
+    backdrop-filter: blur(10px) saturate(130%);
+}
+
+.box-up {
+    box-shadow: rgba(34, 70, 143, 0.4) 0px 0px 25px 0px;
+    background-color: rgba(246, 248, 248, 0.2);
+}
+
+/* ================================================================================= */

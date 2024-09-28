@@ -1,0 +1,25 @@
+{% load static %}
+
+<header>
+    <div id="header-back-img-fx">
+    </div>
+    <video autoplay muted loop id="header-back-img">
+        <source src="{% static 'mov/watermarked_preview.mp4' %}" type="video/mp4">
+    </video>
+    <div id="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static 'img/MGKCT_animated_playing_once.gif' %}" id="header-logo-img" alt="" srcset="">
+                </div>
+                <div id="header-title" class="col-md-9">
+                    <h1>
+                        <span id="header-sub-title">Учреждение образования </span><br> Минский государственный колледж цифровых технологий
+                    </h1>
+                    <p id="header-sup-title">Здест начинается твой путь к успеху!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<link rel="stylesheet" type="text/css" href="{% static 'css/mgkct.css' %}">

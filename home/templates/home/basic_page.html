@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<!-- load wagtailcore_tags by adding this: -->
+{% load static wagtailcore_tags wagtailimages_tags navigation_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+<!-- replace everything below with: -->
+{% block content %}
+
+{% include 'elements/home_page/gallery.html' %}
+
+{% get_site_root as site_root %}
+{% for menuitem in site_root.get_children.live.in_menu %}
+    <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
+{% endfor %}
+
+
+
+{% endblock %}
