@@ -1,0 +1,15 @@
+<div id="homepage-block-important" class="row">
+    <div class="col">
+        <h2 class="visuallyhidden" >Важное о колледже</h2>
+        {% for item in page.anons_gallery.all %}
+        <div class="block box block-important">
+            <i class="bi bi-info-circle-fill"></i>
+            <h3>
+                {{ item.title }}
+            </h3>
+            <a href="{{ item.link }}">Подробнее</a>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>

@@ -70,16 +70,73 @@ main .block {
 }
 
 /* ============================================================= */
-#homepage-block-important {
-    min-height: 10vh;
+.block-important {
+    display: flex;
+
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
 }
 
+.block-important .bi-info-circle-fill {
+    color: rgb(63, 94, 182);
+    text-shadow: white 1px 1px 7px;
+    font-size: 16pt;
+    margin-right: 2em;
+}
+
+.block-important h3{
+    margin: 0px;
+    margin-right: 1em;
+    
+    text-decoration: none;
+    color: rgb(37, 47, 104);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14pt;
+}
+
+.block-important a{
+    margin: -8px;
+    margin-right: 0px;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    
+    border: 1px solid rgba(208, 213, 218, 0.6);
+    border-radius: 16px;
+    box-shadow: 
+    rgba(255, 255, 255, 1) -3px -3px 7px 0px, 
+    rgb(110, 131, 173) 3px 3px 7px 0px;
+    background-color: rgba(246, 248, 248, 0.1);
+    backdrop-filter: blur(10px) saturate(130%);
+    
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+.block-important a:hover {
+    border: 1px solid rgba(205, 212, 219, 0.6);
+    background-color: rgba(246, 248, 248, 0.6);
+    box-shadow: 
+    rgba(255, 255, 255, 1) -3px -3px 4px 1px, 
+    rgb(110, 131, 173) 3px 3px 4px 1px;
+
+    transition: 200ms;
+}
+
+/* ============================================================= */
 #homepage-block-functions {
-    min-height: 90vh;
+
 }
 
 #homepage-block-news {
-    min-height: 60vh;
+
 }
 
 #homepage-block-banners {

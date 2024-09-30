@@ -15,6 +15,7 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         InlinePanel('gallery', label="карточка", heading="Галерея 'Главная'"),
+        InlinePanel('anons_gallery', label="анонс", heading="Галерея 'Анонсы'"),
         InlinePanel('banner_gallery', label="баннер", heading="Галерея 'Баннеры'"),
     ]
 
@@ -55,6 +56,21 @@ class HomePageBannerGallery(Orderable):
     class Meta:
         verbose_name = "Банер"
         verbose_name_plural = "Банеры"
+
+
+class HomePageAnonsGallery(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='anons_gallery', verbose_name="Страница")
+    title = models.CharField(blank=True, max_length=250, verbose_name="Заголовок")
+    link = models.URLField(blank=True, verbose_name="Ссылка")
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('link'),
+    ]
+
+    class Meta:
+        verbose_name = "Анонс"
+        verbose_name_plural = "Анонсы"
 
 
 class Topic(Page):
