@@ -18,7 +18,7 @@
 }
 
 @font-face {
-    font-family: 'Coves';
+    font-family: 'Roboto';
     src: url('../fonts/Roboto.ttf') format("truetype");
 }
 
@@ -126,7 +126,6 @@ header {
     color: #335b8fbb;
     font-size: 22pt;
     font-family: 'Hand';
-    font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -194,7 +193,7 @@ footer a:hover {
 nav a {
     text-decoration: none;
     color: rgb(37, 47, 104);
-    font-family: 'Coves';
+    font-family: 'Roboto';
     font-weight: 400;
     font-size: 14pt;
 }
