@@ -251,18 +251,12 @@ nav a {
 
 
 #nav-list input[type=button] {
-    border: 1px solid rgba(130, 150, 168, 0.4);
+
     border-radius: 8px;
-    box-shadow: rgba(37, 60, 105, 0.2) 0px 0px 5px 0px;
-    background-color: rgba(255, 255, 255, 0.288);
-    backdrop-filter: blur(5px) saturate(130%);
+
     padding: 0.25em;
     padding-left: 0.75em;
     padding-right: 0.75em;
-}
-
-#nav-list input[type=button]::placeholder {
-    color: rgb(173, 173, 173);
 }
 
 @media (max-width: 1200px) {
@@ -303,6 +297,36 @@ nav a {
 .box-up {
     box-shadow: rgba(34, 70, 143, 0.4) 0px 0px 25px 0px;
     background-color: rgba(246, 248, 248, 0.2);
+}
+
+/* ================================================================================= */
+.glass-btn {
+    border: 1px solid rgba(208, 213, 218, 0.6);
+
+    box-shadow: 
+    rgba(255, 255, 255, 1) -3px -3px 7px 0px, 
+    rgb(110, 131, 173) 3px 3px 7px 0px;
+    background-color: rgba(246, 248, 248, 0.1);
+    backdrop-filter: blur(10px) saturate(130%);
+    
+    text-decoration: none;
+    color: rgb(54, 54, 54);
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+.glass-btn:hover {
+    border: 1px solid rgba(205, 212, 219, 0.6);
+    background-color: rgba(246, 248, 248, 0.6);
+    box-shadow: 
+    rgba(255, 255, 255, 1) -3px -3px 4px 1px, 
+    rgb(110, 131, 173) 3px 3px 4px 1px;
+
+    transition: 200ms;
+}
+.glass-btn::placeholder {
+    color: rgb(173, 173, 173);
 }
 
 /* ================================================================================= */
